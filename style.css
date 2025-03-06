@@ -1,0 +1,61 @@
+
+body {
+    background-color: #000;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  #score {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(15, 40px);
+    grid-auto-rows: 40px;
+    width: 600px; 
+    height: 440px; 
+    margin: 0 auto;
+    background-color: #222;
+    position: relative;
+  }
+  
+  .tile {
+    box-sizing: border-box;
+    border: 1px solid #333;
+  }
+  
+  .empty {
+    background-color: #000;
+  }
+  
+  .wall {
+    background-color: grey;
+  }
+  
+  .player {
+    background-color: blue;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+  }
+  
+  .bomb {
+    background-color: black;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .explosion {
+    background-color: orange;
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.8;
+  }
+  
