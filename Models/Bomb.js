@@ -1,4 +1,4 @@
-class Bomb extends GameObject {
+class Bomb extends GameObject implements Explodable{
     constructor(x, y, explosionRadius = 50, timer = 2000) {
       super(x, y);
       this.explosionRadius = explosionRadius;
@@ -17,4 +17,9 @@ class Bomb extends GameObject {
       return explosion;
     }
   }
+
+
+
+
+  
   

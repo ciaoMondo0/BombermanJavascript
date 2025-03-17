@@ -6,6 +6,23 @@ class Explosion {
       this.duration = duration;
       this.createdAt = Date.now();
     }
+
+
+
+    isCollidingWith(obj){
+      return (
+        this.x < obj2.x + obj2.width &&
+        this.x + this.width > obj2.x &&
+        this.y < obj2.y + obj2.height &&
+        this.y + this.height > obj2.y
+      );
+
+
+    }
+
+
+
+
     isCollidingWith(wall) {
       const wallCenterX = wall.x + 20;
       const wallCenterY = wall.y + 20;
@@ -15,3 +32,7 @@ class Explosion {
       return distance < this.radius;
     }
 }
+
+
+
+
