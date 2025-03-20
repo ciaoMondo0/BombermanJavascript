@@ -1,14 +1,17 @@
 class Explosion {
-    constructor(x, y, radius, duration = 500) {
-      this.x = x;
-      this.y = y;
-      this.radius = radius;
-      this.duration = duration;
-      this.createdAt = Date.now();
-    }
+  constructor(x, y, radius, damage) {
+    this.radius = radius;
+    this.damage = damage;
+    this.x = x - radius;
+    this.y = y - radius;
+    this.width = radius * 2;
+    this.height = radius * 2;
+  }
+}
 
+window.Explosion = Explosion;
 
-
+/*
     isCollidingWith(obj){
       return (
         this.x < obj2.x + obj2.width &&
@@ -31,7 +34,7 @@ class Explosion {
       const distance = Math.sqrt(dx * dx + dy * dy);
       return distance < this.radius;
     }
-}
+}*/
 
 
 

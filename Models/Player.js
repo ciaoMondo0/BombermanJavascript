@@ -1,33 +1,40 @@
-class Player extends Character /*implements Collidable*/ {
-    constructor(x, y) {
-      super(x, y);
-      this.speed = 40; 
-    }
-    movement(direction) {
-      switch(direction) {
-        case "up":
-          this.y -= this.speed;
-          break;
-        case "down":
-          this.y += this.speed;
-          break;
-        case "left":
-          this.x -= this.speed;
-          break;
-        case "right":
-          this.x += this.speed;
-          break;
-        default:
-          break;
-      }
+ class Player extends Character  {
+  constructor(x, y, width, height) {
+    super(x, y, width, height);
+    this.speed = 40;
+    this.direction = "down"; 
+  }
 
-      //check collision position + new position
+
+  movement(direction) {
+    this.direction = direction;
+
+    switch (direction) {
+      case "up":
+        this.y -= this.speed;
+        this.element.className = "character up";
+        break;
+      case "down":
+        this.y += this.speed;
+        this.element.className = "character down";
+        break;
+      case "left":
+        this.x -= this.speed;
+        this.element.className = "character left";
+        break;
+      case "right":
+        this.x += this.speed;
+        this.element.className = "character right";
+        break;
+    }
+
+    this.updatePosition();
+  }
+  //check collision position + new position
       /*
        if can move then update position with speed
 
       */
-    }
-
 
     canMove(obj){
       return (
@@ -41,18 +48,16 @@ class Player extends Character /*implements Collidable*/ {
     }
 
 
-    render(){
-
-
-      
-
-
-
-
+    render(container) {
+      console.log("Rendering player...");
+      super.render(container); 
     }
 
 
 
 
   }
-  
+  window.Player = Player;
+
+
+

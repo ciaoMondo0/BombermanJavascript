@@ -1,18 +1,12 @@
-
-
-
-
-
-function checkCollision(obj1, obj2) {
+class CollisionManager {
+  static isColliding(boxA, boxB) {
     return (
-      obj1.x < obj2.x + obj2.width &&
-      obj1.x + obj1.width > obj2.x &&
-      obj1.y < obj2.y + obj2.height &&
-      obj1.y + obj1.height > obj2.y
+      boxA.x < boxB.x + boxB.width &&
+      boxA.x + boxA.width > boxB.x &&
+      boxA.y < boxB.y + boxB.height &&
+      boxA.y + boxA.height > boxB.y
     );
+  }
 }
 
-
-
-
-  
+window.CollisionManager = CollisionManager;

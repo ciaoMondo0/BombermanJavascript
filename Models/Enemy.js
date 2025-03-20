@@ -1,31 +1,55 @@
 class Enemy extends Character{
 
 
-    constructor (x,y ){
+    constructor (x,y,  width, height, health = 100 ){
         super(x, y)
+        this.width = width;
+    this.height = height;
+    this.health = health;
+    this.element = document.createElement("div");
+    this.element.classList.add("enemy");
+    this.updatePosition();
     }
 
 
 
-    update(){
-
-    if(health > 0){
-        this.movement()
+    updatePosition() {
+      this.element.style.left = `${this.x}px`;
+      this.element.style.top = `${this.y}px`;
+    }
+  
+    applyDamage(damage) {
+      this.health -= damage;
+      console.log(`Enemy hit! Health now: ${this.health}`);
+      if (this.health <= 0) {
+        this.destroy();
+      }
     }
 
 
-
+    destroy() {
+      console.log("Enemy destroyed");
+      if(this.element.parentNode){
+        this.element.parentNode.removeChild(this.element);
+      }
     }
-
-
-    hitCharacter(){
-
-        if(health > 0){
-            health--;
-        }
+  
+    getCollisionBox() {
+      return {
+        x: this.x,
+        y: this.y,
+        width: this.width,
+        height: this.height
+      };
     }
+  
+    render(container) {
+      container.appendChild(this.element);
+    }
+  }
+  window.Enemy = Enemy;
 
-
+/*
     movement(){
         let x = Math.random(1, 4)
 
@@ -46,9 +70,9 @@ class Enemy extends Character{
                 break;
             }
         }
+*/
 
 
 
 
-
-    }
+    
