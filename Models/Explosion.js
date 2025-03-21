@@ -1,4 +1,4 @@
-class Explosion {
+export class Explosion {
   constructor(x, y, radius, damage) {
     this.radius = radius;
     this.damage = damage;
@@ -13,7 +13,7 @@ class Explosion {
       x: this.x,
       y: this.y,
       width: this.width,
-      height: this.height
+      height: this.height,
     };
   }
 
@@ -25,9 +25,9 @@ class Explosion {
     explosionEl.style.top = `${this.y}px`;
     explosionEl.style.width = `${this.width}px`;
     explosionEl.style.height = `${this.height}px`;
-    
+
     container.appendChild(explosionEl);
-    
+
     setTimeout(() => {
       if (explosionEl.parentNode) {
         explosionEl.parentNode.removeChild(explosionEl);
@@ -35,11 +35,5 @@ class Explosion {
     }, 500);
   }
 }
-
-window.Explosion = Explosion;
-
-
-
-
 
 

@@ -1,4 +1,4 @@
-class DestructibleWall {
+export class DestructibleWall {
   constructor(x, y, width, height) {
     this.x = x;
     this.y = y;
@@ -37,4 +37,3 @@ class DestructibleWall {
   }
 }
 
-window.DestructibleWall = DestructibleWall;

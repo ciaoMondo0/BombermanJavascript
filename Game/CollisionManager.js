@@ -1,4 +1,4 @@
-class CollisionManager {
+export class CollisionManager {
   static isColliding(boxA, boxB) {
     return (
       boxA.x < boxB.x + boxB.width &&
@@ -8,5 +8,3 @@ class CollisionManager {
     );
   }
 }
-
-window.CollisionManager = CollisionManager;

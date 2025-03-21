@@ -1,4 +1,5 @@
-
+import { CollisionManager } from "./CollisionManager";
+import { Explosion } from "../Models/Explosion";
 class ExplosionManager {
    
     static collidables = [];
@@ -33,5 +34,4 @@ class ExplosionManager {
 
   }
   
-  window.ExplosionManager = ExplosionManager;
   

@@ -1,5 +1,4 @@
-
-    class Wall {
+ export class Wall {
       
       constructor(row, col, tileSize) {
         
@@ -20,5 +19,4 @@
       }
     }
     
-    window.Wall = Wall;
     

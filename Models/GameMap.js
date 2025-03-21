@@ -1,4 +1,4 @@
-class GameMap {
+export class GameMap {
   constructor(containerId, rows, cols, tileSize) {
     this.container = document.getElementById(containerId);
     this.rows = rows;

@@ -1,4 +1,4 @@
-class CollisionBox{
+export class CollisionBox{
 
   constructor(x, y, width, height){
     this.x = x;

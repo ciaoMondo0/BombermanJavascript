@@ -1,4 +1,4 @@
- class Character extends GameObject {
+ export class Character extends GameObject {
   constructor(x, y, width, height) {
     super(x, y); 
     this.width = width;
@@ -20,4 +20,3 @@
     container.appendChild(this.element);
   }
   }
-  window.Character = Character;

@@ -1,4 +1,4 @@
-class Enemy extends Character{
+export class Enemy extends Character{
 
 
     constructor (x,y,  width, height, health = 100 ){
@@ -47,7 +47,6 @@ class Enemy extends Character{
       container.appendChild(this.element);
     }
   }
-  window.Enemy = Enemy;
 
 
 
