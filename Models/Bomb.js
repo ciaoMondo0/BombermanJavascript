@@ -14,8 +14,12 @@ class Bomb extends GameObject {
     }
     
 
-  // Starts the timer and, when the timer expires, marks the bomb as exploded
-  // and delegates the explosion handling to the ExplosionManager.
+
+  updatePosition() {
+    this.element.style.left = `${this.x}px`;
+    this.element.style.top = `${this.y}px`;
+  }
+  
   startTimer() {
     setTimeout(() => {
       this.exploded = true;
@@ -30,21 +34,6 @@ class Bomb extends GameObject {
   }
 }
 
-    /*
-    explode(walls) {
-      this.exploded = true;
-      const explosion = new Explosion(this.x, this.y, this.explosionRadius, 500);
-      walls.forEach(wall => {
-        if (!wall.destroyed && explosion.isCollidingWith(wall)) {
-          wall.disintegrate();
-        }
-      });
-      return explosion;
-   
-   
-   
-   
-    }*/
 
 
   

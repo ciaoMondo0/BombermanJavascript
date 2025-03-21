@@ -28,11 +28,26 @@
   position: absolute;
   z-index: 100; 
   
-  /* 
-  border: 1px solid red; 
-  background-color: yellow; */
+
+}
+.bomb {
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 20;
 }
 
+.explosion {
+  background: rgba(255, 165, 0, 0.8);
+  border-radius: 50%;
+  z-index: 3;
+  pointer-events: none;
+  animation: explode 500ms ease-out forwards;
+}
+@keyframes explode {
+  0% { transform: scale(0.5); opacity: 1; }
+  100% { transform: scale(1); opacity: 0; }
+}
 
 .down  { background-position:  0px    0px; }
 

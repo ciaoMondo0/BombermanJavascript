@@ -27,8 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const player = new Player(40, 40, tileSize, tileSize);
 
   player.render(gameMap.container);
-
-  // **Controllo del movimento con la tastiera**
+  ExplosionManager.addCollidable(player);
   document.addEventListener("keydown", (event) => {
     switch (event.key) {
       case "ArrowUp":
@@ -44,8 +43,15 @@ document.addEventListener("DOMContentLoaded", () => {
         player.movement("right");
         break;
       case " ":
-        const bomb = new Bomb();
-
+          const bombX = player.x;
+          const bombY = player.y;
+          const row = Math.floor(bombY / tileSize);
+          const col = Math.floor(bombX / tileSize);
+    
+          const bomb = new Bomb(bombX, bombY, 50, 2000, row, col, tileSize);
+          
+          bomb.render(gameMap.container);
+          break;
         
 
 

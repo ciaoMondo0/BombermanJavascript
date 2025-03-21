@@ -5,14 +5,12 @@ class GameMap {
     this.cols = cols;
     this.tileSize = tileSize;
 
-    // Configura il container come griglia
     this.container.style.display = "grid";
     this.container.style.gridTemplateColumns = `repeat(${cols}, ${tileSize}px)`;
     this.container.style.gridTemplateRows = `repeat(${rows}, ${tileSize}px)`;
     this.container.style.width = "fit-content";
     this.container.style.position = "relative";
 
-    // Crea le celle di sfondo
     this.createFreeCells();
   }
 
