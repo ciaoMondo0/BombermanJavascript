@@ -1,6 +1,6 @@
-import { CollisionManager } from "./CollisionManager";
-import { Explosion } from "../Models/Explosion";
-class ExplosionManager {
+import { CollisionManager } from "./CollisionManager.js";
+import { Explosion } from "../Models/Explosion.js";
+export class ExplosionManager {
    
     static collidables = [];
 

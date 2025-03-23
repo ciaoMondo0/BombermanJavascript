@@ -1,4 +1,4 @@
-import { Wall } from "./Wall.js";
+import { Wall } from "../Models/Wall.js";
 
 export class ObjectManager {
   constructor(container, layout, rows, cols, tileSize) {

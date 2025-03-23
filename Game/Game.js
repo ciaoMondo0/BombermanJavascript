@@ -1,9 +1,9 @@
-import { GameMap } from "../Models/GameMap";
-import { ObjectManager } from "./ObjectManager";
-import { GameObject } from "../Models/GameObject";
-import { Player } from "../Models/Player";
-import { Bomb } from "../Models/bomb";
-import  { ExplosionManager } from "../Game/ExplosionManager";
+import { GameMap } from "../Models/GameMap.js";
+import { ObjectManager } from "./ObjectManager.js";
+import { GameObject } from "../Models/GameObject.js";
+import { Player } from "../Models/Player.js";
+import { Bomb } from "../Models/Bomb.js";
+import  { ExplosionManager } from "../Game/ExplosionManager.js";
 document.addEventListener("DOMContentLoaded", () => {
   const tileSize = 40;
   const layout = [
