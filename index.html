@@ -2,17 +2,94 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Modular Bomberman Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bomberman Multiplayer</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="mapContainer"></div>
+
+  <header>
+    <h1>Bomberman Multiplayer</h1>
+    <nav>
+      <ul>
+        <li><a href="#gameContainer">Game</a></li>
+        <li><a href="#leaderboard">Leaderboard</a></li>
+        <li><a href="#chat">Chat</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="gameContainer">
+    
+    <aside id="gameInfo">
+      <section>
+        <h2>Game Status</h2>
+
+        <article>
+          <h3>Time Left:</h3>
+          <time id="timer" datetime="PT120S">120s</time>
+        </article>
+
+        <article>
+          <h3>Health</h3>
+          <meter id="healthBar" value="100" min="0" max="100">100%</meter>
+        </article>
+
+        <article>
+          <h3>Bombs Left:</h3>
+          <output id="bombsLeft">3</output>
+        </article>
+      </section>
+
+      <section>
+        <h2>Players Online</h2>
+        <ul id="players"></ul>
+      </section>
+      
+      <button id="startGame">Start Game</button>
+    </aside>
+
+    <section id="mapContainer">
+      <svg id="gameMap" width="600" height="400">
+        <rect width="100%" height="100%" fill="lightgray"></rect>
+      </svg>
+    </section>
+
+    <aside id="gameChat">
+      <h2>Live Chat</h2>
+      <section id="chatMessages" aria-live="polite"></section>
+      <input type="text" id="chatInput" placeholder="Type a message...">
+      <button id="sendChat">Send</button>
+
+      <details>
+        <summary>View Leaderboard</summary>
+        <table id="leaderboard">
+          <thead>
+            <tr>
+              <th>Player</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </details>
+    </aside>
+
+  </main>
+
+  <dialog id="gameOverDialog">
+    <h2>Game Over</h2>
+    <p id="finalScore">Final Score: 0</p>
+    <button onclick="closeDialog()">Close</button>
+  </dialog>
+
+  <template id="playerTemplate">
+    <li>
+      <strong><slot name="name">Player</slot></strong> - 
+      <span><slot name="score">0</slot></span>
+    </li>
+  </template>
 
   <script type="module" src="Game/Game.js"></script>
-
-
-
-  
 </body>
 </html>
-

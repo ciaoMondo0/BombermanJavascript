@@ -1,9 +1,9 @@
 import { GameMap } from "../Models/GameMap.js";
-import { ObjectManager } from "./ObjectManager.js";
+import { ObjectManager } from "../ManagerClasses/ObjectManager.js";
 import { GameObject } from "../Models/GameObject.js";
 import { Player } from "../Models/Player.js";
 import { Bomb } from "../Models/Bomb.js";
-import  { ExplosionManager } from "../Game/ExplosionManager.js";
+import  { ExplosionManager } from "../ManagerClasses/ExplosionManager.js";
 document.addEventListener("DOMContentLoaded", () => {
   const tileSize = 40;
   const layout = [
@@ -22,12 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const gameMap = new GameMap("mapContainer", 11, 15, tileSize);
   console.log("ObjectManager about to generate walls...");
-
   const objectManager = new ObjectManager(gameMap.container, layout, 11, 15, tileSize);
   objectManager.generateWalls();
   objectManager.render();
   console.log("Walls generated:", objectManager.walls.length);
-
   const player = new Player(40, 40, tileSize, tileSize);
 
   player.render(gameMap.container);

@@ -1,5 +1,5 @@
 import { GameObject } from "./GameObject.js";
-import {ExplosionManager} from "../Game/ExplosionManager.js"
+import {ExplosionManager} from "../ManagerClasses/ExplosionManager.js"
 
 export class Bomb extends GameObject {
   constructor(x, y, explosionRadius = 50, timer = 2000, row, col, tileSize) {

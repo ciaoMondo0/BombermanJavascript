@@ -1,4 +1,4 @@
-import { CollisionManager } from "./CollisionManager.js";
+import { CollisionManager } from "../ManagerClasses/CollisionManager.js";
 import { Explosion } from "../Models/Explosion.js";
 export class ExplosionManager {
    
@@ -13,9 +13,7 @@ export class ExplosionManager {
         }
         
         const explosion = new Explosion(bomb.x, bomb.y, bomb.explosionRadius, 50);
-        
         explosion.render(document.getElementById("mapContainer"));
-        
         this.collidables.forEach(obj => {
           const box = obj.getCollisionBox(); 
           if (CollisionManager.isColliding(box, explosion.getCollisionBox())) {
