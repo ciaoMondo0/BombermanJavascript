@@ -1,4 +1,4 @@
-import { CollisionManager } from "../ManagerClasses/CollisionManager.js";
+import { CollisionManager } from "./CollisionManager.js";
 import { Explosion } from "../Models/Explosion.js";
 export class ExplosionManager {
    
