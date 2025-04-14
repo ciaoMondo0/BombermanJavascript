@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Bomberman Game</title>
+  <style>
+    #mapContainer {
+      position: relative;
+      width: 600px;
+      height: 440px;
+      display: grid;
+      grid-template-rows: repeat(11, 40px);
+      grid-template-columns: repeat(15, 40px);
+      border: 1px solid #000;
+    }
+    .wall { background: #333; }
+    .bomb { background: #f00; }
+    .explosion { background: orange; opacity: 0.8; }
+    .player { position: absolute; width: 40px; height: 40px; background: blue; }
+  </style>
+</head>
+<body>
+  <div id="mapContainer"></div>
+  <script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
+  <script type="module" src="client.js"></script>
+
+</body>
+</html>
